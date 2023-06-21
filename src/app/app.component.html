@@ -1,0 +1,6 @@
+<button (click)='testPerform()'>Test Perform GET request</button>
+<button (click)='testFreshness()'>Test Freshness GET request</button>
+<br>
+<input #num1 placeholder="first number" type="number"/>
+<input #num2 placeholder="second number" type="number"/>
+<button (click)="testPost(num1.value, num2.value)">Call Post Method</button>
