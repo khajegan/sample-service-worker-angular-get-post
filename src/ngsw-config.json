@@ -30,8 +30,7 @@
     {
       "name": "api-perform",
       "urls": [
-        "https://httpbin.org/get",
-        "http://localhost:8082/url"
+        "https://httpbin.org/get"
       ],
       "cacheConfig": {
         "strategy": "performance",
@@ -43,7 +42,7 @@
     {
       "name": "api-fresh",
       "urls": [
-
+        "http://localhost:8082/url"
       ],
       "cacheConfig": {
         "strategy": "freshness",
