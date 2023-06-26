@@ -21,15 +21,15 @@ export class AppComponent implements OnInit {
     })
   }
 
-  updateClient() {
-    if (!this.swUpdate.isEnabled) {
-      console.log('not enabled');
-      return;
-    }
-    this.swUpdate.available.subscribe((event) => {
-      console.log('current', event.current, 'available', event.available);
-    });
-  }
+  // updateClient() {
+  //   if (!this.swUpdate.isEnabled) {
+  //     console.log('not enabled');
+  //     return;
+  //   }
+  //   this.swUpdate.available.subscribe((event) => {
+  //     console.log('current', event.current, 'available', event.available);
+  //   });
+  // }
 
   testPerform() {
     this.service.testPerform().subscribe(x => console.log(x));
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
   testPost(num1: String, num2: String) {
     this.service.testPost(Number(num1), Number(num2)).subscribe(x => {
       console.log(x.body);
-      this.updateClient();
+      // this.updateClient();
     }, err => {
       console.log(err);
     });
