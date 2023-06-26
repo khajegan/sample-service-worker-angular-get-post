@@ -4,6 +4,11 @@ self.addEventListener('sync', (event) => {
     event.waitUntil(getAllRows());
   }
 });
+self.onmessage = function (msg) {
+  console.log(msg.data);
+  self.clients.matchAll().then(all => all.map(client => client.postMessage('message from sw to to component')));
+}
+// var Token = '';
 function getAllRows() {
   const request = indexedDB.open('db_test');
   request.onerror = function (error) {
@@ -25,6 +30,7 @@ function getAllRows() {
           method: element.method,
           headers: {
             'Content-Type': 'application/json',
+            // 'Authorization': 'Bearer ' + Token
           },
           body: JSON.stringify(element.body)
         }).then(() => {
