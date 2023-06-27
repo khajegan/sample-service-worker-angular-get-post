@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Service} from "./service";
 import {OnlineService} from "./online.service";
 import {SwUpdate} from "@angular/service-worker";
