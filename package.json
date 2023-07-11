@@ -7,7 +7,7 @@
     "build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "rm -rf dist;npm run build;cp src/service-worker.js dist/sample-ngsw;cp src/manifest.json dist/sample-ngsw;http-server -p 8080 -c-i dist/sample-ngsw"
+    "server": "rm -rf dist;npm run build;cp src/service-worker.js dist/sample-ngsw;http-server -p 8080 -c-i dist/sample-ngsw"
   },
   "private": true,
   "dependencies": {
