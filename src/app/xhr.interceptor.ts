@@ -10,7 +10,7 @@ export class XhrInterceptor implements HttpInterceptor {
     method: string,
     payload: any
   };
-
+  statusCodes = [0, 504];
   constructor() {
   }
 
@@ -18,7 +18,7 @@ export class XhrInterceptor implements HttpInterceptor {
     if (req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE') {
       return next.handle(req).pipe(
         catchError(error => {
-          if (error.status === 0) {
+          if (this.statusCodes.includes(error.status)) {
             var db = new Dexie('db_test');
             db.version(1).stores({
               xhrRequests: '++id,url,payload,method'
