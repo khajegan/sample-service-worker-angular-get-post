@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration=production",
+    "build": "rm -rf dist; ng build --configuration=production; cp src/service-worker.js dist/sample-ngsw",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "rm -rf dist;npm run build;cp src/service-worker.js dist/sample-ngsw;http-server -p 8080 -c-i dist/sample-ngsw"
+    "server": "npm run build;http-server -p 8080 -c-i dist/sample-ngsw",
+    "publish": "npm run build;sudo rm /var/www/html/* -R;sudo cp -r dist/sample-ngsw/* /var/www/html/"
   },
   "private": true,
   "dependencies": {

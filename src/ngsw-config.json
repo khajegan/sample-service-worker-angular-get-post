@@ -51,5 +51,8 @@
         "timeout": "1s"
       }
     }
-  ]
+  ],
+  "appData": {
+    "baseUrl": "/"
+  }
 }
